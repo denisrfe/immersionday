@@ -1,0 +1,20 @@
+yum install –y https://s3.amazonaws.com/streaming-data-agent/aws-kinesis-agent-latest.amzn1.noarch.rpm
+
+{
+  "awsAccessKeyId": "XXXXXXXXXXXXX",
+  "awsSecretAccessKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "cloudwatch.emitMetrics": true,
+  "kinesis.endpoint": "",
+  "firehose.endpoint": "firehose.us-west-2.amazonaws.com",
+  
+  "flows": [
+    {
+      "filePattern": "/var/log/httpd/access_log",
+      "deliveryStream": "log-webserver"
+    }
+  ]
+}
+
+chmod 755 /var/log/httpd
+setfacl -m u:aws-kinesis-agent-user:rwx /var/log/httpd/access_log
+systemctl start aws-kinesis-agent

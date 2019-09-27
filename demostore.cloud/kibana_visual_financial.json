@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "0beca1f0-ccbe-11e8-b123-51efbb744084",
+    "_type": "dashboard",
+    "_source": {
+      "title": "bank",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":11,\"w\":23,\"h\":12,\"i\":\"1\"},\"embeddableConfig\":{},\"id\":\"f65c00b0-ccbd-11e8-882a-234974cda16e\",\"type\":\"visualization\",\"version\":\"6.3.1\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":11,\"i\":\"2\"},\"embeddableConfig\":{},\"id\":\"b7f3c960-ccbe-11e8-b123-51efbb744084\",\"type\":\"visualization\",\"version\":\"6.3.1\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":23,\"y\":11,\"w\":24,\"h\":12,\"i\":\"3\"},\"embeddableConfig\":{},\"id\":\"85956360-ccbf-11e8-882a-234974cda16e\",\"type\":\"visualization\",\"version\":\"6.3.1\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "f65c00b0-ccbd-11e8-882a-234974cda16e",
+    "_type": "visualization",
+    "_source": {
+      "title": "operations",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"field\":\"operation.keyword\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderAgg\":{\"enabled\":true,\"id\":\"2-orderAgg\",\"params\":{\"field\":\"amount\"},\"schema\":{\"aggFilter\":[\"!top_hits\",\"!percentiles\",\"!median\",\"!std_dev\",\"!derivative\",\"!moving_avg\",\"!serial_diff\",\"!cumulative_sum\",\"!avg_bucket\",\"!max_bucket\",\"!min_bucket\",\"!sum_bucket\"],\"deprecate\":false,\"editor\":false,\"group\":\"none\",\"hideCustomLabel\":true,\"max\":null,\"min\":0,\"name\":\"orderAgg\",\"params\":[],\"title\":\"Order Agg\"},\"type\":\"sum\"},\"orderBy\":\"custom\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":5},\"schema\":\"segment\",\"type\":\"terms\"}],\"params\":{\"maxFontSize\":72,\"minFontSize\":18,\"orientation\":\"single\",\"scale\":\"linear\",\"showLabel\":true},\"title\":\"operations\",\"type\":\"tagcloud\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"8fba5c00-cca7-11e8-b123-51efbb744084\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "b7f3c960-ccbe-11e8-b123-51efbb744084",
+    "_type": "visualization",
+    "_source": {
+      "title": "agencies",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{\"field\":\"amount\"},\"schema\":\"metric\",\"type\":\"sum\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"field\":\"agency.keyword\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":5},\"schema\":\"group\",\"type\":\"terms\"}],\"params\":{\"addLegend\":true,\"addTooltip\":true,\"gauge\":{\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":198999998,\"to\":297999997},{\"from\":297999997,\"to\":396999996},{\"from\":396999996,\"to\":495999995},{\"from\":495999995,\"to\":594999994},{\"from\":594999994,\"to\":693999993},{\"from\":693999993,\"to\":792999992}],\"extendRange\":false,\"gaugeColorMode\":\"Labels\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Circle\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"maxAngle\":6.283185307179586,\"minAngle\":0,\"orientation\":\"vertical\",\"percentageMode\":true,\"scale\":{\"color\":\"#333\",\"labels\":false,\"show\":true},\"style\":{\"bgColor\":false,\"bgFill\":\"#eee\",\"bgMask\":false,\"bgWidth\":0.9,\"fontSize\":60,\"labelColor\":true,\"mask\":false,\"maskBars\":50,\"subText\":\"\",\"width\":0.9},\"type\":\"meter\",\"verticalSplit\":false},\"isDisplayWarning\":false,\"type\":\"gauge\"},\"title\":\"agencies\",\"type\":\"gauge\"}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"25 - 38\":\"rgb(0,104,55)\",\"38 - 50\":\"rgb(102,189,99)\",\"50 - 63\":\"rgb(217,239,139)\",\"63 - 75\":\"rgb(254,224,139)\",\"75 - 88\":\"rgb(244,109,67)\",\"88 - 100\":\"rgb(165,0,38)\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"8fba5c00-cca7-11e8-b123-51efbb744084\",\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "85956360-ccbf-11e8-882a-234974cda16e",
+    "_type": "visualization",
+    "_source": {
+      "title": "Types per Operations",
+      "visState": "{\"title\":\"Types per Operations\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"type.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"operation.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"8fba5c00-cca7-11e8-b123-51efbb744084\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  }
+]
